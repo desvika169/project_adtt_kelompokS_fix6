@@ -24,63 +24,73 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-body, .main { background-color: #0f1117; }
+body, .main { background-color: #f5f0e8; }
+[data-testid="stAppViewContainer"] { background-color: #f5f0e8; }
+[data-testid="stSidebar"] { background-color: #ede5d8; border-right: 1px solid #d4c5b0; }
 [data-testid="metric-container"] {
-    background: #1a1f2e;
-    border: 1px solid #2a3050;
+    background: #ede5d8;
+    border: 1px solid #c8b89a;
     border-radius: 10px;
     padding: 14px 18px;
 }
 [data-testid="metric-container"] label {
-    color: #7a88aa !important;
+    color: #7a6650 !important;
     font-size: 0.75rem !important;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     font-weight: 600;
 }
 [data-testid="metric-container"] [data-testid="stMetricValue"] {
-    color: #c8d6f0 !important;
+    color: #3d2b1f !important;
     font-size: 1.75rem !important;
     font-weight: 700;
 }
 [data-testid="stMetricDelta"] { font-size: 0.75rem !important; }
+h1, h2, h3, h4 { color: #3d2b1f !important; }
+p, li, label, .stMarkdown { color: #4a3728 !important; }
 .section-title {
-    color: #4db8a0;
+    color: #8b5e3c;
     font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    border-left: 4px solid #4db8a0;
+    border-left: 4px solid #8b5e3c;
     padding-left: 10px;
     margin: 24px 0 14px 0;
 }
 .insight-box {
-    background: #1a1f2e;
-    border: 1px solid #2a3050;
-    border-left: 4px solid #4db8a0;
+    background: #ede5d8;
+    border: 1px solid #c8b89a;
+    border-left: 4px solid #8b5e3c;
     border-radius: 8px;
     padding: 14px 18px;
     margin: 10px 0;
-    color: #c8d6f0;
+    color: #3d2b1f;
     font-size: 0.9rem;
     line-height: 1.7;
 }
-.tag-pos { background:#1a3a2a; color:#4db880; border-radius:4px; padding:2px 8px; font-size:0.8rem; font-weight:600; }
-.tag-neg { background:#3a1a1a; color:#e07060; border-radius:4px; padding:2px 8px; font-size:0.8rem; font-weight:600; }
-.tag-neu { background:#2a2a1a; color:#c8b840; border-radius:4px; padding:2px 8px; font-size:0.8rem; font-weight:600; }
+.tag-pos { background:#d4e8d4; color:#3a6b3a; border-radius:4px; padding:2px 8px; font-size:0.8rem; font-weight:600; }
+.tag-neg { background:#f0d8d0; color:#8b3a2a; border-radius:4px; padding:2px 8px; font-size:0.8rem; font-weight:600; }
+.tag-neu { background:#e8e0cc; color:#6b5a30; border-radius:4px; padding:2px 8px; font-size:0.8rem; font-weight:600; }
+.stTabs [data-baseweb="tab-list"] { background-color: #ede5d8; border-radius: 8px; }
+.stTabs [data-baseweb="tab"] { color: #7a6650 !important; }
+.stTabs [aria-selected="true"] { color: #8b5e3c !important; border-bottom: 2px solid #8b5e3c !important; }
+.stButton>button { background:#8b5e3c; color:#f5f0e8; border:none; border-radius:8px; font-weight:600; }
+.stButton>button:hover { background:#6b4428; color:#f5f0e8; }
+hr { border-color: #c8b89a !important; }
 #MainMenu, footer { visibility: hidden; }
 </style>
 """, unsafe_allow_html=True)
 
 # ── COLOR PALETTE ────────────────────────────────────────────────────────────
-BG    = "#1a1f2e"
-TEXT  = "#c8d6f0"
-BLUE  = "#4a7fb5"
-RED   = "#c8604a"
-GREEN = "#4db880"
-TEAL  = "#4db8a0"
-GOLD  = "#c8b840"
-GRID  = "#2a3050"
+BG    = "#ede5d8"
+TEXT  = "#3d2b1f"
+BLUE  = "#6b8f71"   # sage green
+RED   = "#a0522d"   # sienna
+GREEN = "#6b8c5a"   # olive green
+TEAL  = "#8b5e3c"   # brown
+GOLD  = "#c8963c"   # amber
+GRID  = "#c8b89a"
 
 # ── PLOT BASE ────────────────────────────────────────────────────────────────
 def new_fig(w=9, h=4):
